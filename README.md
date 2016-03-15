@@ -1,3 +1,14 @@
+-----
+
+I updated the original code of the *interpretable models* (GAM and GA2M), mainly to perform automatic feature selection, but also to add some visualization.  
+
+Check [here](https://github.com/sds-dubois/mltk/blob/master/INSTRUCTIONS.md) the updated instructions.
+
+-----
+
+Original ReadMe from Yin Lou:
+
+
 # Machine Learning Tool Kit
 
 ## Overview
