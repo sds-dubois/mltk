@@ -96,9 +96,9 @@ public class FAST {
 	 *
 	 * <pre>
 	 * Usage: mltk.predictor.gam.interaction.FAST
-	 * -d	dataset path
 	 * -R	residual path
 	 * -o	output path
+	 * [-d]	dataset path
 	 * [-r]	attribute file path
 	 * [-b]	number of bins (default: 256)
 	 * [-p]	number of threads (default: 1)
