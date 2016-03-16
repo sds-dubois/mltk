@@ -1,6 +1,8 @@
 # Interpretable Models (GAM and GA2M) - Instructions
 
 -------
+-------
+
 
 # Machine Learning Tool Kit
 
@@ -225,6 +227,34 @@ $ java mltk.predictor.gam.tool.Diagnostics -i ga2ms/ga2m54 -o diags/ga2m54.txt
 ```
 
 
+# Making Predictions
+
+This can be done with the module `mltk.preidictor.evaluation.Predictor`.
+
+```
+Usage: Predictor
+-m	  model path
+[-d]	data set path (default : binned_train.txt)
+[-r]	attribute file path
+[-p]	prediction path
+[-R]	residual path
+[-g]	task between classification (c) and regression (r) (default: r)
+[-P]	output probablity (default: false)
+```
+
+So to predict the class of each observation of a test set, we can use the command:
+```
+$ java mltk.predictor.evaluation.Predictor -g c -d binned_test.txt -m ga2ms/ga2m541 \
+                                           -p class_prediction.txt
+```
+
+and if we would rather get the class probabilities:
+```
+$ java mltk.predictor.evaluation.Predictor -g c -d binned_test.txt -m ga2ms/ga2m541 \
+                                           -p prob_prediction.txt -P true
+```
+
+
 # Visualization
 
 ## ROC curves
@@ -232,12 +262,12 @@ $ java mltk.predictor.gam.tool.Diagnostics -i ga2ms/ga2m54 -o diags/ga2m54.txt
 When testing with AUC, you can provide an additional argument `-o` specifying a file to save data to later create ROC and Precision-Recall curves:
 
 ```
-$ java mltk.predictor.evaluation.Evaluator -e a -m ga2ms/ga2m54 -o roc_data/ga2m54
+$ java mltk.predictor.evaluation.Evaluator -e a -m ga2ms/ga2m54 -o curves/ga2m54
 ```
 
 Then you can use the R script `utils/save_curves.R input_file output_file` to create the images:
 ```
-$ Rscript ../../utils/save_curves.R roc_data/ga2m54 curves/g2m54
+$ Rscript ../../utils/save_curves.R curves/ga2m54 curves/g2m54
 ```
 
 ## Feature contribution

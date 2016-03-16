@@ -99,8 +99,8 @@ public class Predictor {
 	 *
 	 * <pre>
 	 * Usage: Predictor
-	 * -d	data set path
 	 * -m	model path
+	 * [-d]	data set path (default : binned_train.txt)
 	 * [-r]	attribute file path
 	 * [-p]	prediction path
 	 * [-R]	residual path
